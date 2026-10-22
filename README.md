@@ -2,7 +2,7 @@
 
 A Flask web application that allocates crops to fields using **Vogel's Approximation Method (VAM)** and **MODI optimization**, balancing farm profitability with water conservation and environmental sustainability.
 
-Built for the *Computation and Mathematics* Symposium 2024.
+Built for the *Computation and Mathematics* Symposium 2025.
 
 ## Features
 
