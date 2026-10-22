@@ -1,0 +1,23 @@
+Crop,Yield_t_ha,Market_Price_Rs_per_ton,Fertilizer_Use_kg_ha,Water_Use_L_ha,Type
+Wheat,3.57,25084,210,1200000,Low-input cereal
+Rice,3.8,22000,180,2800000,Drought-resilient
+Maize,2.9,18000,120,1000000,Niche cereal
+Soybean,1.2,48000,40,800000,"Legume, low input"
+Cotton,1.6,45000,200,2500000,Long-duration pulse
+Barley,2.5,18000,120,1000000,Low-input cereal
+Millets,1.8,22000,70,500000,Drought-resilient
+Oats,2.4,20000,100,900000,Niche cereal
+Gram (Chickpeas),1.0,55000,20,600000,"Legume, low input"
+Pigeon pea (Arhar),0.9,65000,25,700000,Long-duration pulse
+Moong (Green gram),0.8,60000,20,500000,Short-season legume
+Urad (Black gram),0.9,58000,25,600000,Monsoon legume
+Lentils (Masoor),1.1,50000,30,600000,Winter pulse
+Groundnut,1.5,50000,60,900000,"Oilseed, moderate input"
+Mustard/Rapeseed,1.2,48000,70,700000,Winter oilseed
+Sunflower,1.0,52000,80,800000,"Oilseed, adaptable"
+Sesame (Til),0.7,85000,40,600000,"High-value, low-yield"
+Tea,2.2,90000,250,1200000,Plantation crop
+Coffee,1.1,180000,200,1000000,Plantation crop
+Jute,2.4,25000,100,1500000,High water usage
+Sugarcane,75.0,3200,250,18000000,Extremely water-intensive
+Tobacco,1.8,60000,300,1500000,"High input, high return"

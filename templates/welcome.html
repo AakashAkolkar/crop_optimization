@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Crop Planning Optimizer - Symposium 2024</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%2327ae60" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,101.3C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: cover;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 2rem;
+        }
+        .logo-icon {
+            font-size: 5rem;
+            color: #27ae60;
+            margin-bottom: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .subtitle {
+            font-size: 1.5rem;
+            color: #546e7a;
+            margin-bottom: 3rem;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: #27ae60;
+            margin-bottom: 1rem;
+        }
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .feature-desc {
+            color: #718096;
+        }
+        .cta-buttons {
+            margin-top: 3rem;
+        }
+        .btn-primary-custom {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            border-radius: 50px;
+            color: white;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0.5rem;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+        }
+        .btn-primary-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+            color: white;
+        }
+        .btn-secondary-custom {
+            background: white;
+            border: 2px solid #27ae60;
+            padding: 1rem 3rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            border-radius: 50px;
+            color: #27ae60;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0.5rem;
+        }
+        .btn-secondary-custom:hover {
+            background: #27ae60;
+            color: white;
+            transform: translateY(-2px);
+        }
+        .stats-section {
+            background: white;
+            padding: 4rem 0;
+            margin-top: 4rem;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+        }
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #27ae60;
+        }
+        .stat-label {
+            color: #718096;
+            font-size: 1.1rem;
+        }
+        .team-section {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .team-badge {
+            background: #f8f9fa;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .demo-cards {
+            margin-top: 3rem;
+        }
+        .demo-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .demo-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        .demo-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .demo-desc {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <div class="logo-icon">
+                <i class="fas fa-seedling"></i>
+            </div>
+            <h1 class="title">Sustainable Crop Planning Optimizer</h1>
+            <p class="subtitle">Balancing Profitability with Environmental Sustainability</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Advanced Optimization</h3>
+                    <p class="feature-desc">VAM + MODI algorithms for optimal crop allocation</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3 class="feature-title">Water Conservation</h3>
+                    <p class="feature-desc">Reduce water usage by up to 30% with smart planning</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 class="feature-title">Profit Maximization</h3>
+                    <p class="feature-desc">Increase farming profits by 15-20% on average</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="feature-title">Comprehensive Database</h3>
+                    <p class="feature-desc">22 crops, 15 regions with real agricultural data</p>
+                </div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="/app" class="btn-primary-custom">
+                    <i class="fas fa-rocket me-2"></i>Launch Application
+                </a>
+                <a href="#demos" class="btn-secondary-custom">
+                    <i class="fas fa-play me-2"></i>View Demos
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Optimization Modes</div>
+                </div>
+                <div class="col-md-3 stat-item">
+                    <div class="stat-number">22</div>
+                    <div class="stat-label">Crop Varieties</div>
+                </div>
+                <div class="col-md-3 stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Indian States</div>
+                </div>
+                <div class="col-md-3 stat-item">
+                    <div class="stat-number">&lt;5s</div>
+                    <div class="stat-label">Optimization Time</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container" id="demos">
+        <div class="team-section">
+            <h2 class="mb-4">Quick Demo Scenarios</h2>
+            <p class="text-muted">Click any scenario to load it in the application</p>
+            
+            <div class="demo-cards">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="demo-card" onclick="window.location.href='/app?demo=small'">
+                            <h4 class="demo-title">
+                                <i class="fas fa-user me-2 text-success"></i>Small Farmer
+                            </h4>
+                            <p class="demo-desc">2 crops, 2 fields - Perfect for demonstrating basic functionality</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="demo-card" onclick="window.location.href='/app?demo=medium'">
+                            <h4 class="demo-title">
+                                <i class="fas fa-users me-2 text-primary"></i>Cooperative Farming
+                            </h4>
+                            <p class="demo-desc">4 crops, 3 fields - Shows scalability and complexity</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="demo-card" onclick="window.location.href='/app?demo=water_scarce'">
+                            <h4 class="demo-title">
+                                <i class="fas fa-exclamation-triangle me-2 text-warning"></i>Water Scarcity
+                            </h4>
+                            <p class="demo-desc">Drought-resistant crops - Highlights sustainability features</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-badge">
+                <i class="fas fa-graduation-cap me-2"></i>
+                <strong>Optimization Techniques</strong> - Symposium 2024
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
