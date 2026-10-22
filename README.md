@@ -100,17 +100,10 @@ symposium-app/
 4. Review the allocation, charts, and profit and water-use figures.
 5. Export the results to Excel.
 
-## Screenshots
-
-<!-- Add screenshots to a "screenshots" folder and link them here, e.g.: -->
-<!-- ![Landing page](screenshots/welcome.png) -->
-<!-- ![Results](screenshots/results.png) -->
-
 ## Team
 
 - **Aakash Akolkar**: [@AakashAkolkar](https://github.com/AakashAkolkar)
 - **Vasavi Agrawal**: [@Vasavi-16](https://github.com/Vasavi-16)
-- **Teammate 2**: [@username](https://github.com/username)
-- **Teammate 3**: [@username](https://github.com/username)
+
 
 
